@@ -29,11 +29,7 @@
         <c:if test="${error!=null}">
             <div class="alert-danger">
                 <ul>
-                    <c:forEach items="${error}" var="message">
-
-                        <li>${message}</li>
-
-                    </c:forEach>
+                        <li>${error}</li>
                 </ul>
             </div>
         </c:if>
@@ -51,7 +47,7 @@
     </c:if>
 
 
-        <form method="post" action="Servlet?command=Add" novalidate="novalidate">
+        <form method="post" action="Servlet?command=SignUp" novalidate="novalidate">
             <!-- novalidate in order to be able to run tests correctly -->
             <p><label for="userid">User id</label>
                 <input type="text" id="userid" name="userid" value="${useridPreviousValue}" required></p>

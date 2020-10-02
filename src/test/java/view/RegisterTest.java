@@ -174,7 +174,7 @@ public class RegisterTest {
 		String useridRandom = generateRandomUseridInOrderToRunTestMoreThanOnce("pierke");
 		submitForm(useridRandom, "Pieter", "Pieters", "pieter.pieters@hotmail.com", "1234");
 		
-		driver.get(path+"?command=Add");
+		driver.get(path+"?command=SignUp");
 
 		submitForm(useridRandom, "Pieter", "Pieters", "pieter.pieters@hotmail.com", "1234");
 		
