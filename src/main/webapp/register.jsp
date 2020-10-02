@@ -12,7 +12,7 @@
 <body>
 <div id="container">
     <header>
-        <h1><span>XXX</span></h1>
+        <h1><span>Sign Up</span></h1>
         <nav>
             <ul>
                 <li><a href="Servlet">Home</a></li>
@@ -26,19 +26,30 @@
 
     </header>
     <main>
-        <!--   <div class="alert-danger">
-            <ul>
-                <li>Some error</li>
-            </ul>
-        </div> -->
-        <c:if test="${result!=null}">
-            <div class="alert alert-${result!=null?'danger':''}">
-                <c:forEach items="${result}" var="message">
+        <c:if test="${error!=null}">
+            <div class="alert-danger">
+                <ul>
+                    <c:forEach items="${error}" var="message">
 
-                    <p>${message}</p>
-                </c:forEach>
+                        <li>${message}</li>
+
+                    </c:forEach>
+                </ul>
             </div>
         </c:if>
+
+    <c:if test="${result!=null}">
+        <div class="alert-danger">
+            <ul>
+                <c:forEach items="${result}" var="message">
+
+                    <li>${message}</li>
+
+                </c:forEach>
+            </ul>
+        </div>
+    </c:if>
+
 
         <form method="post" action="Servlet?command=Add" novalidate="novalidate">
             <!-- novalidate in order to be able to run tests correctly -->

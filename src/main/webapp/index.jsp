@@ -13,7 +13,7 @@
 	<div id="container">
 		<header>
 			<h1>
-				<span>XXX</span>
+				<span>Home</span>
 			</h1>
 			<nav>
 				<ul>

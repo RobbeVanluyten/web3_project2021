@@ -34,7 +34,7 @@ public class Servlet extends HttpServlet {
                destination = handler.handleRequest(request, response);
             } catch (Exception exc) {
                 request.setAttribute("error", exc.getMessage());
-                destination = "error.jsp";
+                destination = "register.jsp";
             }
         }
         request.getRequestDispatcher(destination).forward(request, response);

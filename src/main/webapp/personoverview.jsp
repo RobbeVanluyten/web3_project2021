@@ -10,7 +10,7 @@
 <body>
 <div id="container">
     <header>
-        <h1><span>XXX</span></h1>
+        <h1><span>Overview</span></h1>
         <nav>
             <ul>
                 <li><a href="Servlet">Home</a></li>

@@ -15,22 +15,23 @@ import org.openqa.selenium.chrome.ChromeDriver;
 
 public class RegisterTest {
 	private WebDriver driver;
-	private String path = "http://localhost:8080/Controller";
+	private String path = "http://localhost:8080/Deelopdracht1a_war_exploded/Servlet";
 	
 	@Before
 	public void setUp() {
 		//System.setProperty("webdriver.chrome.driver", "/Users/.../web3pers/chromedriver");
 			// windows: gebruik dubbele \\ om pad aan te geven
 			// hint: zoek een werkende test op van web 2 ...
-		System.setProperty("webdriver.chrome.driver", "/Applications/chromedriver");
+		System.setProperty("webdriver.chrome.driver", "D:\\Toegepaste informatica Jaar Vakken2\\Webontwikkeling3\\Chromedriver\\chromedriver.exe");
 		driver = new ChromeDriver();
-		driver.get(path+"?action=signUp");
+		driver.get(path+"?command=Register");
 	}
 	
 	@After
 	public void clean() {
 	    driver.quit();
 	}
+
 
 	@Test
 	public void test_Register_AllFieldsFilledInCorrectly_UserIsRegistered() {
@@ -40,7 +41,7 @@ public class RegisterTest {
 		String title = driver.getTitle();
 		assertEquals("Overview",title);
 		
-		driver.get(path+"?action=overview");
+		driver.get(path+"?command=Overview");
 		
 		ArrayList<WebElement> listItems=(ArrayList<WebElement>) driver.findElements(By.cssSelector("table tr"));
 		boolean found=false;
@@ -173,7 +174,7 @@ public class RegisterTest {
 		String useridRandom = generateRandomUseridInOrderToRunTestMoreThanOnce("pierke");
 		submitForm(useridRandom, "Pieter", "Pieters", "pieter.pieters@hotmail.com", "1234");
 		
-		driver.get(path+"?action=signUp");
+		driver.get(path+"?command=Add");
 
 		submitForm(useridRandom, "Pieter", "Pieters", "pieter.pieters@hotmail.com", "1234");
 		
